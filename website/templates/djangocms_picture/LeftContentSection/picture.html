@@ -1,0 +1,69 @@
+{% load thumbnail static %}
+
+
+{# start render figure/figcaption #}
+
+{# end render figure/figcaption #}
+
+
+<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" >
+	<div class="background-media" style="background-image: url('{{ instance.picture.url }}'); background-repeat:no-repeat; background-size:cover; background-attachment:fixed; background-position: 50% 0%;" data-start="background-position: 50% 0px" data-0-top-bottom="background-position: 50% -120px"> </div>
+    <div class="background-overlay grid-overlay-0 " style="background-color: rgba(86,154,167,0);"></div>
+    <div class="container-fullwidth container-vertical-middle">
+        <div class="row vertical-middle">
+            <div class="col-md-6     text-default small-screen-default"  ></div>
+			<div class="col-md-6     text-center small-screen-default"  style="background:rgba(255, 255, 255, 0.95);">
+				<div class="row "><div class="col-md-2     text-default small-screen-default"  ></div>
+					<div class="col-md-8     text-center small-screen-default"  >
+						<h2 class="text-default  element-top-100 element-bottom-0 text-normal os-animation big default" data-os-animation="fadeIn" data-os-animation-delay="0.1s" >
+							{{ instance.Title }}
+						</h2>
+						<div class="figure element-top-0 element-bottom-0   os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.2s">
+							<span class="figure-image">
+							<img width="200" height="17" src="{% static 'images/decor-small-gold.png' %}" class="attachment-full size-full" alt="" />            </span>
+						</div>
+						<div class="col-text-1 text-normal  element-top-20 element-bottom-100 os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.3s">
+							{{ instance.caption_text }}
+						</div>
+					</div>
+					<div class="col-md-2     text-default small-screen-default"  ></div>
+				</div>
+			</div>
+		</div>
+    </div>
+</section>
+    
+
+
+{% comment %}
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/image
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure
+    # https://github.com/divio/django-filer/blob/master/filer/models/imagemodels.py
+    # http://easy-thumbnails.readthedocs.io/en/2.1/usage/#templates
+    {{ instance.picture }}
+    # Available variables:
+    {{ instance.width }}
+    {{ instance.height }}
+    {{ instance.alignment }}
+    {{ instance.caption_text }}
+    {{ instance.attributes_str }}
+    # picture helper
+    {{ instance.get_size }} or {{ picture_size }}
+    # link settings
+    {{ instance.link_url }}
+    {{ instance.link_page }}
+    {{ instance.link_target }}
+    {{ instance.link_attributes_str }}
+    # link helper
+    {{ instance.get_link }} or {{ picture_link }}
+    # cropping settings
+    {{ instance.use_automatic_scaling }}
+    {{ instance.use_no_cropping }}
+    {{ instance.use_crop }}
+    {{ instance.use_upscale }}
+    {{ instance.thumbnail_options }}
+    # activate DJANGOCMS_PICTURE_NESTING to enable nested plugins:
+    {% for plugin in instance.child_plugin_instances %}
+        {% render_plugin plugin %}
+    {% endfor %}
+{% endcomment %}

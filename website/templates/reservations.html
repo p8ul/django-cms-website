@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% load static %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block content %}
+{% placeholder 'Title background' %}
+<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" >
+    <div class="background-media title-background" style=""></div>
+    <div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0.2);"></div>
+    <div class="container container-vertical-default">
+        <div class="row vertical-default">
+            <div class="col-md-12     text-center small-screen-default"  >
+                <div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF">
+                    <div class="visible-xs" style="height:50px;"></div>
+                    <div class="visible-sm" style="height:100px;"></div>
+                    <div class="visible-md" style="height:200px;"></div>
+                    <div class="visible-lg" style="height:200px;"></div>
+                </div>
+                <h1 class="text-center  element-top-0 element-bottom-0 text-light os-animation super default" data-os-animation="fadeIn" data-os-animation-delay="0.1s" >
+                   {% placeholder 'Page Title' %}
+                </h1>
+                <h1 class="text-center  element-top-20 element-bottom-20 text-light os-animation bigger regular" data-os-animation="fadeIn" data-os-animation-delay="0.2s" >
+                   {% placeholder 'Page subtitle' %}
+                </h1>
+                <div class="figure element-top-0 element-bottom-0   os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.3s">
+                    <span class="figure-image">
+                    <img width="360" height="30" src="{% static 'images/decor-big-white.png' %}" class="attachment-full size-full" alt="" srcset="{% static 'images/decor-big-white.png' %} 360w, {% static 'images/decor-big-white-300x25.png' %} 300w" sizes="(max-width: 360px) 100vw, 360px" />            </span>
+                </div>
+                <div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF">
+                    <div class="visible-xs" style="height:50px;"></div>
+                    <div class="visible-sm" style="height:100px;"></div>
+                    <div class="visible-md" style="height:100px;"></div>
+                    <div class="visible-lg" style="height:100px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% placeholder 'special offer background' %}
+<!--reservation form section-->
+<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" >
+    <div class="background-media special-offer" style="" >  </div>
+    <div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0.4);"></div>
+    <div class="container container-vertical-middle">
+        <div class="row vertical-middle">
+            <div class="col-md-12     text-center small-screen-default"  >
+                <div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF">
+                    <div class="visible-xs" style="height:40px;"></div>
+                    <div class="visible-sm" style="height:40px;"></div>
+                    <div class="visible-md" style="height:40px;"></div>
+                    <div class="visible-lg" style="height:40px;"></div>
+                </div>
+                <div role="form" class="wpcf7" id="wpcf7-f108-p71-o1" lang="en-US" dir="ltr">
+                <div class="screen-reader-response"></div>
+                    {% placeholder 'Reservation Form' %}
+                    <!--form -->
+                    <!--<form action="/hotel/reservations/#wpcf7-f108-p71-o1" method="post" class="wpcf7-form" novalidate="novalidate">-->
+                        <!--<div style="display: none;">-->
+                        <!--<input type="hidden" name="_wpcf7" value="108" />-->
+                        <!--<input type="hidden" name="_wpcf7_version" value="4.6" />-->
+                        <!--<input type="hidden" name="_wpcf7_locale" value="en_US" />-->
+                        <!--<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f108-p71-o1" />-->
+                        <!--<input type="hidden" name="_wpnonce" value="dbc3d73c95" />-->
+                        <!--</div>-->
+                        <!--<div class="row vertical-middle">-->
+                            <!--<div class="col-md-3 text-light">-->
+                            <!--<div class="form-group text-left">-->
+                                        <!--<label>Check in Date:</label>-->
+                            <!--<div class="date-wrapper"><span class="wpcf7-form-control-wrap date-754"><input type="text" name="date-754" value="" size="40" class="wpcf7-form-control wpcf7-date form-control" placeholder="Choose Check in date" /> </span></div></div></div>-->
+                            <!--<div class="col-md-3 text-light">-->
+                            <!--<div class="form-group  text-left">-->
+                                        <!--<label>Check out Date:</label>-->
+                            <!--<div class="date-wrapper"><span class="wpcf7-form-control-wrap date-758"><input type="text" name="date-758" value="" size="40" class="wpcf7-form-control wpcf7-date form-control" placeholder="Choose Check out date" /> </span></div></div></div>-->
+                            <!--<div class="col-md-3 text-light">-->
+                                <!--<div class="form-group  text-left">-->
+                                        <!--<label>Room type:</label><br />-->
+                                        <!--<span class="wpcf7-form-control-wrap menu-147"><select name="menu-147" class="wpcf7-form-control wpcf7-select" aria-invalid="false"><option value="Single Room">Single Room</option><option value="Double Room">Double Room</option><option value="Triple Room">Triple Room</option><option value="Suite">Suite</option></select></span>-->
+                                    <!--</div>-->
+                             <!--</div>-->
+                            <!--<div class="col-md-3">-->
+                                <!--<div class="form-group  text-center">-->
+                                    <!--<label>&nbsp;</label><br />-->
+                                    <!--<input type="submit" value="Book Your Room Now" class="wpcf7-form-control wpcf7-submit btn btn-primary" />-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="wpcf7-response-output wpcf7-display-none"></div>-->
+                    <!--</form>-->
+                    <!--end form -->
+
+                </div>
+                <div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF">
+                    <div class="visible-xs" style="height:40px;"></div>
+                    <div class="visible-sm" style="height:40px;"></div>
+                    <div class="visible-md" style="height:40px;"></div>
+                    <div class="visible-lg" style="height:40px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--end resrvation from section-->
+
+<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" >
+    <div class="background-media" style="background-image: url(&#039;{% static 'images/reservation/rooms-notinclude1.jpg' %}&#039;); background-repeat:no-repeat; background-size:cover; background-attachment:fixed; background-position: 50% 0%;" data-start="background-position: 50% 0px" data-0-top-bottom="background-position: 50% -80px"> </div>
+    <div class="background-overlay grid-overlay-0 " style="background-color: rgba(86,154,167,0);"></div>
+
+    <div class="container-fullwidth container-vertical-middle">
+        <div class="row vertical-middle">
+            <div class="col-md-6     text-default small-screen-default"  style="background:rgba(255, 255, 255, 0.95);">
+                <div class="row ">
+                    <div class="col-md-2     text-default small-screen-default"  ></div>
+                    <div class="col-md-8     text-Default small-screen-default"  >
+                        <h2 class="text-center  element-top-100 element-bottom-0 text-normal os-animation big default" data-os-animation="fadeIn" data-os-animation-delay="0.1s" >
+                           {% placeholder ' Special Offers' %}
+                        </h2>
+                        <div class="figure element-top-0 element-bottom-0  block text-center os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.2s">
+                                <span class="figure-image">
+                            <img width="200" height="17" src="{% static 'images/decor-small-gold.png' %}" class="attachment-full size-full" alt="" />            </span>
+                        </div>
+                        <ul class="pricing-item-list  text-normal element-top-20 element-bottom-100" data-os-animation="none" data-os-animation-delay="0s">
+                            <li class="pricing-cirle  element-top-0 element-bottom-40 os-animation " data-os-animation="fadeIn" data-os-animation-delay="0s">
+                                <div class="pricing-item-list-content">
+                                 {% placeholder 'Offer 01' %}
+                                </div>
+                            </li>
+                            <li class="pricing-cirle  element-top-0 element-bottom-40 os-animation " data-os-animation="fadeIn" data-os-animation-delay="0s">
+                                <div class="pricing-item-list-content">
+                                  {% placeholder 'Offer02' %}
+                                </div>
+                            </li>
+                            <li class="pricing-cirle  element-top-0 element-bottom-40 os-animation " data-os-animation="fadeIn" data-os-animation-delay="0s">
+                                <div class="pricing-item-list-content">
+                                   {% placeholder 'Offer 03' %}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2     text-default small-screen-default"  ></div>
+                </div>
+            </div>
+            <div class="col-md-6     text-center small-screen-default"  ></div>
+        </div>
+    </div>
+</section>
+	{% placeholder "content" %}
+{% endblock content %}

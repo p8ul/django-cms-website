@@ -1,0 +1,79 @@
+{% load thumbnail static %}
+
+
+{# start render figure/figcaption #}
+
+{# end render figure/figcaption #}
+
+
+<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" >
+	<div class="background-media" style="background-image: url('{{ instance.picture.url }}'); background-repeat:no-repeat; background-size:cover; background-attachment:fixed; background-position: 50% 0%;" data-start="background-position: 50% 0px" data-0-top-bottom="background-position: 50% -120px"> </div>
+
+    <div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0.4);"></div>
+
+    <div class="container container-vertical-default">
+        <div class="row vertical-default">
+            <div class="col-md-12     text-center small-screen-default"  >
+                <div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF">
+                    <div class="visible-xs" style="height:100px;"></div>
+                    <div class="visible-sm" style="height:100px;"></div>
+                    <div class="visible-md" style="height:190px;"></div>
+                    <div class="visible-lg" style="height:190px;"></div>
+                </div>
+                <h1 class="text-center  element-top-0 element-bottom-0 text-light os-animation super default" data-os-animation="fadeIn" data-os-animation-delay="0.1s" >
+               {{ instance.Title }}
+                </h1>
+                <h1 class="text-center  element-top-20 element-bottom-20 text-light os-animation bigger regular" data-os-animation="fadeIn" data-os-animation-delay="0.2s" >
+               {{ instance.subtitle }}
+                </h1>
+				<div class="figure element-top-0 element-bottom-0   os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.3s">
+                    <span class="figure-image">
+                    <img width="360" height="30" src="{% static 'images/decor-big-white.png' %}" class="attachment-full size-full" alt="" />
+                    </span>
+                </div>
+                <div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF">
+                    <div class="visible-xs" style="height:100px;"></div>
+                    <div class="visible-sm" style="height:100px;"></div>
+                    <div class="visible-md" style="height:100px;"></div>
+                    <div class="visible-lg" style="height:100px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+{% comment %}
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/image
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure
+    # https://github.com/divio/django-filer/blob/master/filer/models/imagemodels.py
+    # http://easy-thumbnails.readthedocs.io/en/2.1/usage/#templates
+    {{ instance.picture }}
+    # Available variables:
+    {{ instance.width }}
+    {{ instance.height }}
+    {{ instance.alignment }}
+    {{ instance.caption_text }}
+    {{ instance.attributes_str }}
+    # picture helper
+    {{ instance.get_size }} or {{ picture_size }}
+    # link settings
+    {{ instance.link_url }}
+    {{ instance.link_page }}
+    {{ instance.link_target }}
+    {{ instance.link_attributes_str }}
+    # link helper
+    {{ instance.get_link }} or {{ picture_link }}
+    # cropping settings
+    {{ instance.use_automatic_scaling }}
+    {{ instance.use_no_cropping }}
+    {{ instance.use_crop }}
+    {{ instance.use_upscale }}
+    {{ instance.thumbnail_options }}
+    # activate DJANGOCMS_PICTURE_NESTING to enable nested plugins:
+    {% for plugin in instance.child_plugin_instances %}
+        {% render_plugin plugin %}
+    {% endfor %}
+{% endcomment %}

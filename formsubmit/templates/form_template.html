@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-12">
+        {% for field in form %}
+       <div class="col-md-6">
+            <div class="form-group " style="padding:12px">
+                <label for="song_title">{{ field.label_tag }}</label>
+
+                {% if field.name == 'check_in_date' %}
+                 <div class='date-wrapper'>
+                    <input type="text"  id="check-in-date" class='form-control'  name="check_in_date" value='{{ check_in}}'>
+                </div>
+
+                    {% elif field.name == 'check_out_date'  %}
+                 <div class='date-wrapper'>
+                     <input type="date" id="check-out-date" class='dp form-control' name="check_out_date" value="{{ check_out}}">
+                 </div>
+                    {% else %}
+                    {{ field }}{% endif %}
+
+            </div>
+      </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% load static %}
+<script type='text/javascript' src='{% static "js/jquery/jquery.js" %}'></script>
+<script>
+    jQuery(function($){
+        $( "#check-out-date" ).focusin(function() {
+                $(this).datepicker().datepicker("option", "dateFormat", "yy-mm-dd");
+        });
+
+        $( "#check-in-date" ).focusin(function() {
+                $(this).datepicker().datepicker("option", "dateFormat", "yy-mm-dd");
+        });
+    });
+
+
+</script>

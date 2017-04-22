@@ -1,0 +1,90 @@
+{% extends 'rooms/base.html' %}
+{% load static %}
+{% load cms_tags menu_tags sekizai_tags %}
+{% block rooms_content %}
+<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" >
+    <div class="background-media" style="background-image: url(&#039;{% static 'images/rooms/rooms-notinclude1.jpg' %}&#039;); background-repeat:no-repeat; background-size:cover; background-attachment:fixed; background-position: 50% 0%;" data-start="background-position: 50% 0px" data-0-top-bottom="background-position: 50% -100px"></div>
+        <div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0.2);"></div>
+    <div class="container container-vertical-default">
+        <div class="row vertical-default">
+            <div class="col-md-12     text-center small-screen-default"  >
+                <div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF">
+            <div class="visible-xs" style="height:50px;"></div>
+            <div class="visible-sm" style="height:100px;"></div>
+                <div class="visible-md" style="height:200px;"></div>
+                <div class="visible-lg" style="height:200px;"></div>
+            </div>
+                <h1 class="text-center  element-top-0 element-bottom-20 text-light os-animation hyper default" data-os-animation="fadeIn" data-os-animation-delay="0.1s" >
+                    {% placeholder 'Page Title' %}
+                </h1>
+                <div class="figure element-top-0 element-bottom-100   os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.3s">
+                    <span class="figure-image">
+                <img width="360" height="30" src="{% static 'images/decor-big-white.png' %}" class="attachment-full size-full" alt="" srcset="{% static 'images/decor-big-white.png' %} 360w, {% static 'images/decor-big-white-300x25.png' %} 300w" sizes="(max-width: 360px) 100vw, 360px" />            </span>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+{% if latest_rooms_list %}
+
+<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" >
+    <div class="background-media" style="background-image: url(&#039;&#039;); background-repeat:no-repeat; background-size:cover; background-attachment:scroll; background-position: 50% 0%;" >  </div>    <div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0);"></div>
+    <div class="container container-vertical-default">
+        <div class="row vertical-default">
+            <div class="col-md-12     text-default small-screen-default"  >
+                <div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF">
+                    <div class="visible-xs" style="height:80px;"></div>
+                    <div class="visible-sm" style="height:80px;"></div>
+                    <div class="visible-md" style="height:80px;"></div>
+                    <div class="visible-lg" style="height:80px;"></div>
+                </div>
+                <div class="portfolio-container  element-top-20 element-bottom-20 text-normal">
+                  <div class="row">
+                        <div class="col-md-12">
+                            <div class="portfolio-header clearfix">
+                                <div class="portfolio-filters pull-right"> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio masonry no-transition" data-padding="15" data-col-xs="1" data-col-sm="3" data-col-md="3" data-col-lg="3" data-layout="fitRows">
+
+
+    {% for room in latest_rooms_list %}
+
+ <div class="masonry-item portfolio-item filter-rooms" data-menu-order="1" data-date="2014-12-19T08:50:08+00:00" data-title="Superior Room" data-comments="0">
+                <div class="figure  element-top-0 element-bottom-0 portfolio-os-animation image-filter-none image-filter-onhover fade-in text-left figcaption-middle normalwidth" data-os-animation="fadeIn" data-os-animation-delay="0s">
+                    <a href="{% url 'rooms:detail' room.id %}" title="" class="figure-image  image-all" data-links=""  target="_self">
+                        <img width="800" height="600" src="{{ room.image.url }}" class="normalwidth" alt="Superior Room" />
+                        <div class="figure-overlay grid-overlay-0">
+                            <div class="figure-overlay-container">
+                                <div class="figure-caption">
+                                    <i class="icon-circle-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="figure-caption text-left">
+                        <h3 class="figure-caption-title bordered bordered-small bordered-link">
+                            <a href="#" class="" data-links="" target="_self">{{ room.room_title }}</a>
+                        </h3>
+                        <p class="figure-caption-description">{{ room.description|slice:":155" }}</p>
+                    </div>
+                </div>
+            </div>
+   {% endfor %}
+{% else %}
+    <p>No Rooms are available.</p>
+{% endif %}
+  </div>
+</div>
+    <div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF">
+        <div class="visible-xs" style="height:80px;"></div>
+        <div class="visible-sm" style="height:80px;"></div>
+        <div class="visible-md" style="height:80px;"></div>
+        <div class="visible-lg" style="height:80px;"></div>
+    </div>
+    </div>
+    </div>
+    </div>
+</section>
+{% endblock %}

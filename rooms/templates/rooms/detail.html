@@ -1,0 +1,76 @@
+{% extends 'rooms/base.html' %}
+{% load static %}
+{% block rooms_content %}
+<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" >
+    <div class="background-media" style="background-image: url(&#039;{% static 'images/rooms/rooms-notinclude1.jpg' %}&#039;); background-repeat:no-repeat; background-size:cover; background-attachment:fixed; background-position: 50% 0%;" data-start="background-position: 50% 0px" data-0-top-bottom="background-position: 50% -100px"></div>
+        <div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0.2);"></div>
+    <div class="container container-vertical-default">
+        <div class="row vertical-default">
+            <div class="col-md-12     text-center small-screen-default"  >
+                <div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF">
+            <div class="visible-xs" style="height:50px;"></div>
+            <div class="visible-sm" style="height:100px;"></div>
+                <div class="visible-md" style="height:200px;"></div>
+                <div class="visible-lg" style="height:200px;"></div>
+            </div>
+                <h1 class="text-center  element-top-0 element-bottom-20 text-light os-animation hyper default" data-os-animation="fadeIn" data-os-animation-delay="0.1s" >
+                    {{ rooms.room_title }}
+                </h1>
+                <div class="figure element-top-0 element-bottom-100   os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.3s">
+                    <span class="figure-image">
+                <img width="360" height="30" src="{% static 'images/decor-big-white.png' %}" class="attachment-full size-full" alt="" srcset="{% static 'images/decor-big-white.png' %} 360w, {% static 'images/decor-big-white-300x25.png' %} 300w" sizes="(max-width: 360px) 100vw, 360px" />            </span>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" >
+    <div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0);"></div>
+    <div class="container container-vertical-default">
+        <div class="row vertical-default">
+            <div class="col-md-12     text-default small-screen-default"  ><div class="col-text-1 text-normal  element-top-20 element-bottom-20" data-os-animation="none" data-os-animation-delay="0s">
+            <p></p>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" >
+    <div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0);"></div>
+    <div class="container container-vertical-default">
+        <div class="row vertical-default">
+            <div class="col-md-3     text-default small-screen-default"  >
+                <h2 class="text-center  element-top-60 element-bottom-0 text-normal os-animation normal default" data-os-animation="fadeIn" data-os-animation-delay="0.1s" >
+                Amenities
+                </h2>
+                <div class="figure element-top-0 element-bottom-20  block text-center os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.2s">
+                        <span class="figure-image">
+                    <img width="200" height="17" src="{% static 'images/decor-small-gold.png' %}" class="attachment-full size-full" alt="" />            </span>
+                </div>
+                <div class="col-text-1 text-normal  element-top-0 element-bottom-0 os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.3s">
+                    <p>{{ rooms.description }}</p>
+                </div>
+                 <ul class="skills-list normal  element-top-20 element-bottom-20 text-normal os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.4s">
+                     {% for amenity in rooms.amenities_set.all %}
+                     <li> {{ amenity.amenity_text }}</li>
+                    {% endfor %}
+
+                 </ul>
+            </div>
+            <div class="col-md-9     text-default small-screen-default"  >
+                <div class="figure element-top-60 element-bottom-20   os-animation" data-os-animation="fadeInRight" data-os-animation-delay="0s">
+                    <a href="{{ rooms.image.url }}" class="figure-image magnific" target="_self">
+                    <img width="1200" height="800" src="{{ rooms.image.url }}" class="attachment-full size-full" alt="" srcset="{{ rooms.image.url }} 1200w, {{ rooms.image.url }} 300w,{{ rooms.image.url }} 1024w,{{ rooms.image.url }} 600w" sizes="(max-width: 1200px) 100vw, 1200px" />            </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+
+{% endblock %}

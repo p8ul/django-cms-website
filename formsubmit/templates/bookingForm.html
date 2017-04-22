@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block title %}Room Booking{% endblock %}
+{% load static %}
+
+{% block content %}
+<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" >
+            <div class="background-media" style="background-image: url(&#039;{% static 'images/rooms/rooms-notinclude1.jpg' %}&#039;); background-repeat:no-repeat; background-size:cover; background-attachment:fixed; background-position: 50% 0%;" data-start="background-position: 50% 0px" data-0-top-bottom="background-position: 50% -100px">
+                    </div>
+
+    <div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0.2);"></div>
+
+    <div class="container container-vertical-default">
+        <div class="row vertical-default">
+            <div class="col-md-12     text-center small-screen-default"  ><div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF">
+    <div class="visible-xs" style="height:50px;"></div>
+    <div class="visible-sm" style="height:100px;"></div>
+    <div class="visible-md" style="height:200px;"></div>
+    <div class="visible-lg" style="height:200px;"></div>
+</div><h1 class="text-center  element-top-0 element-bottom-20 text-light os-animation hyper default" data-os-animation="fadeIn" data-os-animation-delay="0.1s" >
+    Room Booking</h1><div class="figure element-top-0 element-bottom-100   os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.3s">
+            <span class="figure-image">
+        <img width="360" height="30" src="{% static 'images/decor-big-white.png' %}" class="attachment-full size-full" alt="" srcset="{% static 'images/decor-big-white.png' %} 360w, {% static 'images/decor-big-white-300x25.png' %} 300w" sizes="(max-width: 360px) 100vw, 360px" />            </span>
+    </div>
+</div>        </div>
+    </div>
+</section>
+
+<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" >
+    <div class="background-media" style="background-image: url(&#039;{% static 'images/restaurant/food-bg-1.jpg' %}&#039;); background-repeat:no-repeat; background-size:cover; background-attachment:fixed; background-position: 50% 0%;" data-start="background-position: 50% 0px" data-0-top-bottom="background-position: 50% -80px">
+    </div>
+    <div class="background-overlay grid-overlay-0 " style="background-color: rgba(86,154,167,0);"></div>
+
+    <div class="container-fullwidth container-vertical-middle">
+        <div class="row vertical-middle">
+            <div class="col-md-6     text-default small-screen-default"  style="background:rgba(255, 255, 255, 0.95);">
+                <div class="row "><div class="col-md-2     text-default small-screen-default"  ></div>
+                    <div class="col-md-8     text-center small-screen-default"  >
+                        <h2 class="text-default  element-top-100 element-bottom-0 text-normal os-animation big default" data-os-animation="fadeIn" data-os-animation-delay="0.1s" >
+                      Book Room
+
+                        <p><strong></strong></p>
+
+                        </h2>
+                        <div class="figure element-top-0 element-bottom-0   os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.2s">
+                            <span class="figure-image">
+                            <img width="200" height="17" src="{% static 'images/decor-small-gold.png' %}" class="attachment-full size-full" alt="" />            </span>
+                        </div>
+                        <div class="col-text-1 text-normal  element-top-20 element-bottom-100 os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.3s">
+                           {% if error_message %}
+                             <p><strong>{{ error_message }}</strong></p>
+                            {% endif %}
+                            <form id="bookForm" class="form-horizontal" role="form" action="{% url 'forms:BookingView' %}" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {% include 'form_template.html' %}
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-success">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-2     text-default small-screen-default"  ></div>
+                </div>
+            </div>
+            <div class="col-md-6     text-center small-screen-default"  >
+                <div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF">
+                    <div class="visible-xs" style="height:200px;"></div>
+                    <div class="visible-sm" style="height:200px;"></div>
+                    <div class="visible-md" style="height:200px;"></div>
+                    <div class="visible-lg" style="height:200px;"></div>
+                </div>
+             </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

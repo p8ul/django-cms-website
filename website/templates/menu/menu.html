@@ -1,0 +1,12 @@
+{% load menu_tags %}
+
+{% for child in children %}
+<li class="child  menu-item {% if child.selected %} selected{% endif %}{% if child.ancestor %} ancestor{% endif %}{% if child.sibling %} menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-191 dropdown sibling{% endif %}{% if child.descendant %} descendant{% endif %}">
+	<a href="{% if child.children %} # {% else %} {{ child.attr.redirect_url|default:child.get_absolute_url }}{% endif %}" {% if child.children %} data-toggle="dropdown" class=" dropdown-toggle" aria-expanded="true" {% endif %}>{{ child.get_menu_title }}</a>
+	{% if child.children %}
+	<ul class="dropdown-menu dropdown-menu-left" role='menu' >
+		{% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
+	</ul>
+	{% endif %}
+</li>
+{% endfor %}

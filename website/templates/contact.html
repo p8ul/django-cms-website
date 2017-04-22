@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% load static %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block content %}
+
+{% placeholder 'Title Section' %}
+
+<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" >
+    <div class="background-overlay grid-overlay-0 " style="background-color: rgba(86,154,167,0);"></div>
+        <div class="container-fullwidth container-vertical-middle">
+            <div class="row vertical-middle">
+                <div class="col-md-6     text-default small-screen-default"  >
+                    <div class="row "><div class="col-md-2     text-default small-screen-default"  ></div>
+                        <div class="col-md-8     text-center small-screen-default"  >
+                            <h2 class="text-default  element-top-100 element-bottom-0 text-normal os-animation big default" data-os-animation="fadeIn" data-os-animation-delay="0.1s" >
+                                {% placeholder ' Form Title' %}
+                            </h2>
+                            <div class="figure element-top-0 element-bottom-40   os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.2s">
+                <span class="figure-image">
+                 <img width="200" height="17" src="{% static 'images/decor-small-gold.png' %}" class="attachment-full size-full" alt="" />
+                </span>
+        </div>
+    <div role="form" class="wpcf7" id="wpcf7-f87-p76-o1" lang="en-US" dir="ltr">
+    <div class="screen-reader-response"></div>
+        {% placeholder 'Contact Form4' %}
+
+    </div>
+    <div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF">
+        <div class="visible-xs" style="height:100px;"></div>
+        <div class="visible-sm" style="height:100px;"></div>
+        <div class="visible-md" style="height:100px;"></div>
+        <div class="visible-lg" style="height:100px;"></div>
+    </div>
+    </div>
+        <div class="col-md-2    text-default small-screen-default"  ></div>
+                    </div>
+                </div>
+                <div class="col-md-6     text-center small-screen-default"  style="background:rgba(255, 255, 255, 0.95);">
+                    <!--<div id="map965" class="google-map  element-top-0 element-bottom-0" style="height:800px" data-os-animation="none" data-os-animation-delay="0s">-->
+                        <!---->
+                    <!--</div>-->
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1423.1113280256961!2d36.832851636750206!3d-1.2149507494596905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTInNTMuOCJTIDM2wrA1MCcwMS42IkU!5e1!3m2!1sen!2s!4v1492350030156" width="800" height="1050" frameborder="0" style="border:0" allowfullscreen></iframe>                </div>
+            </div>
+        </div>
+</section>
+
+<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" >
+    <div class="background-media" style="background-image: url(&#039;{% static 'images/contact/rooms2-notinclude.jpg' %}&#039;); background-repeat:no-repeat; background-size:cover; background-attachment:fixed; background-position: 50% 0%;" data-start="background-position: 50% 0px" data-0-top-bottom="background-position: 50% -80px">
+    </div>
+    <div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0.7);"></div>
+    <div class="container container-vertical-middle">
+        <div class="row vertical-middle">
+                <div class="col-md-2     text-center small-screen-default"  ></div>
+            <div class="col-md-8     text-center small-screen-default"  >
+                <h2 class="text-default  element-top-100 element-bottom-0 text-light os-animation big default" data-os-animation="fadeIn" data-os-animation-delay="0.1s" >
+                    {% placeholder "Our Guest Title" %}
+                </h2>
+                <div class="figure element-top-0 element-bottom-0   os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.2s">
+                    <span class="figure-image">
+                    <img width="200" height="17" src="{% static 'images/decor-small-white.png' %}" class="attachment-full size-full" alt="" />            </span>
+                </div>
+                <div id="flexslider-361" class=" element-top-20 element-bottom-100 text-center text-light os-animation flexslider feature-slider" data-os-animation="fadeIn" data-os-animation-delay="0.3s" data-flex-animation="slide" data-flex-controls-position="outside" data-flex-controlsalign="center" data-flex-directions="hide" data-flex-speed="7000" data-flex-controls="show" data-flex-slideshow="true">
+                    <ul class="slides">
+                        <li>
+                            <blockquote >
+                                {% placeholder "Guest 01" %}
+                            </blockquote>
+                        </li>
+                        <li>
+                            <blockquote >
+                                {% placeholder "Guest 02" %}
+                            </blockquote>
+                        </li>
+                        <li>
+                            <blockquote >
+                               {% placeholder "Guest 03" %}
+                            </blockquote>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        <div class="col-md-2     text-default small-screen-default"  ></div>
+        </div>
+    </div>
+</section>
+
+
+	{% placeholder "content" %}
+{% endblock content %}

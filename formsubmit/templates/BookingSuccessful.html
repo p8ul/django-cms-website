@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Room Booking{% endblock %}
+{% load static %}
+
+{% block content %}
+<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" >
+            <div class="background-media" style="background-image: url(&#039;{% static 'images/rooms/rooms-notinclude1.jpg' %}&#039;); background-repeat:no-repeat; background-size:cover; background-attachment:fixed; background-position: 50% 0%;" data-start="background-position: 50% 0px" data-0-top-bottom="background-position: 50% -100px">
+                    </div>
+
+    <div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0.2);"></div>
+
+    <div class="container container-vertical-default">
+        <div class="row vertical-default">
+            <div class="col-md-12     text-center small-screen-default"  ><div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFF">
+    <div class="visible-xs" style="height:50px;"></div>
+    <div class="visible-sm" style="height:100px;"></div>
+    <div class="visible-md" style="height:200px;"></div>
+    <div class="visible-lg" style="height:200px;"></div>
+</div><h1 class="text-center  element-top-0 element-bottom-20 text-light os-animation hyper default" data-os-animation="fadeIn" data-os-animation-delay="0.1s" >
+    Room Successfully Booked</h1><div class="figure element-top-0 element-bottom-100   os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.3s">
+            <span class="figure-image">
+        <img width="360" height="30" src="{% static 'images/decor-big-white.png' %}" class="attachment-full size-full" alt="" srcset="{% static 'images/decor-big-white.png' %} 360w, {% static 'images/decor-big-white-300x25.png' %} 300w" sizes="(max-width: 360px) 100vw, 360px" />            </span>
+    </div>
+</div>        </div>
+    </div>
+</section>
+{% endblock %}

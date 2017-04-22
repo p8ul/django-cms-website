@@ -1,0 +1,87 @@
+{% load cms_tags  djangocms_forms_tags i18n sekizai_tags staticfiles %}
+{% load url from future %}
+<div class="form-wrapper">
+	{% if instance.title %}
+		<h3 class="title">{{ instance.title }}</h3>
+	{% endif %}
+	{% if instance.description %}
+		<div class="description">
+			{{ instance.description|safe }}
+		</div>
+	{% endif %}
+
+	  <form action="{% url 'forms:index' %}" class="wpcf7-form" method="POST" {% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
+		<div class="form-errors" style="display:none;"></div>
+		<div class="row vertical-middle">
+			{% for field in form.visible_fields %}
+			<div class="col-md-3 text-light">
+				<div class="form-group text-left">
+
+					{% if field|is_checkbox %}
+						{{ field }}
+					{% endif %}
+					<label for="{{ field.id_for_label }}">
+						{{ field.label }}{% if field|is_required %}<span class="asterisk">*</span>{% endif %}
+					</label>
+					<div class="{% if field|is_select %} none {% else %} date-wrapper {% endif %}">
+					<span class="wpcf7-form-control-wrap date-754">
+					{% if not field|is_checkbox %}
+						{{ field }}
+					{% endif %}
+					{% if field.help_text %}
+						<div id="help-text-{{ field.auto_id }}" class="help-text">{{ field.help_text|safe }}</div>
+					{% endif %}
+					</span>
+					</div>
+
+
+				</div>
+			</div>
+
+			{% endfor %}
+			{% csrf_token %}
+			<div class="col-md-3">
+				<div class="form-group  text-center">
+						<label>&nbsp;</label><br />
+						<button class="wpcf7-form-control wpcf7-submit btn btn-primary" type="submit" value="{{ instance.submit_btn_txt }}">{{ instance.submit_btn_txt }}</button>
+				</div>
+			</div>
+		 </div>
+			<div class="wpcf7-response-output wpcf7-display-none"></div>
+	  </form>
+
+
+
+	<div class="form-success" style="display: none;">
+		{% if instance.post_submit_msg %}
+			<p>{{ instance.post_submit_msg|safe }}</p>
+		{% else %}
+            <h3>{% trans 'Submission successful' %}</h3>
+            <p>{% trans 'Thank You! Your form has been successfully submitted!' %}</p>
+		{% endif %}
+	</div>
+</div>
+
+{% addtoblock "css" %}
+    {% if instance.use_honeypot %}
+        <style type="text/css">
+            .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+        </style>
+    {% endif %}
+{% endaddtoblock %}
+{% addtoblock "js" %}
+    {% if instance.use_recaptcha %}
+        <script src="https://www.google.com/recaptcha/api.js?onload=reCapctchaOnloadCallback&render=explicit" async defer></script>
+    {% endif %}
+	<script src="{% static 'js/djangocms_forms/libs/jquery.form.min.js' %}"></script>
+	<script src="{% static 'js/djangocms_forms/jquery.djangocms-forms.js' %}"></script>
+
+	<script type="text/javascript">
+		$(function() {
+		  $('.forms').cmsForms({
+			  'reCaptchaSiteKey': '{{ recaptcha_site_key }}',
+			  'redirectDelay': {{ redirect_delay|default:1000 }}
+		  });
+		});
+	</script>
+{% endaddtoblock %}

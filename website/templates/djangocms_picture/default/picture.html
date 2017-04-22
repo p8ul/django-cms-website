@@ -1,0 +1,57 @@
+{% load thumbnail %}
+
+
+{# start render figure/figcaption #}
+
+{# end render figure/figcaption #}
+
+ <div class="masonry-item portfolio-item filter-other" data-menu-order="0" data-date="2015-01-12T09:05:02+00:00" data-title="Inside Pool" data-comments="0">
+	<div class="figure  element-top-0 element-bottom-0 portfolio-os-animation image-filter-none image-filter-onhover fade-in text-center figcaption-middle normalwidth" data-os-animation="fadeIn" data-os-animation-delay="0s">
+		<a href="{{ instance.picture.url }}" title="" class="figure-image magnific image-all" data-links=""  target="_self">
+			<img width="800" height="600" src="{{ instance.picture.url }}" class="normalwidth" alt="Inside Pool" />
+			<div class="figure-overlay grid-overlay-0">
+				<div class="figure-overlay-container">
+					<div class="figure-caption">
+						<i class="icon-circle-plus"></i>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+
+    
+
+
+{% comment %}
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/image
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure
+    # https://github.com/divio/django-filer/blob/master/filer/models/imagemodels.py
+    # http://easy-thumbnails.readthedocs.io/en/2.1/usage/#templates
+    {{ instance.picture }}
+    # Available variables:
+    {{ instance.width }}
+    {{ instance.height }}
+    {{ instance.alignment }}
+    {{ instance.caption_text }}
+    {{ instance.attributes_str }}
+    # picture helper
+    {{ instance.get_size }} or {{ picture_size }}
+    # link settings
+    {{ instance.link_url }}
+    {{ instance.link_page }}
+    {{ instance.link_target }}
+    {{ instance.link_attributes_str }}
+    # link helper
+    {{ instance.get_link }} or {{ picture_link }}
+    # cropping settings
+    {{ instance.use_automatic_scaling }}
+    {{ instance.use_no_cropping }}
+    {{ instance.use_crop }}
+    {{ instance.use_upscale }}
+    {{ instance.thumbnail_options }}
+    # activate DJANGOCMS_PICTURE_NESTING to enable nested plugins:
+    {% for plugin in instance.child_plugin_instances %}
+        {% render_plugin plugin %}
+    {% endfor %}
+{% endcomment %}

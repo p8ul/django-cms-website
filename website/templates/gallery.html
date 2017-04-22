@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% load static %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block content %}
+{% placeholder 'Page Title Section' %}
+
+<section class="section  text-normal section-text-no-shadow section-inner-no-shadow section-normal section-opaque" >
+
+    <div class="background-overlay grid-overlay-0 " style="background-color: rgba(0,0,0,0.9);"></div>
+    <div class="container-fullwidth container-vertical-default">
+        <div class="row vertical-default">
+            <div class="col-md-12     text-default small-screen-default"  >
+                <div class="portfolio-container  element-top-0 element-bottom-0 text-normal">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="portfolio-header clearfix">
+                                <div class="portfolio-filters pull-right"> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio masonry no-transition magnific-all" data-padding="0" data-col-xs="1" data-col-sm="3" data-col-md="3" data-col-lg="3" data-layout="fitRows">
+                    {% placeholder 'Gallery Image' %}
+                    <!--<div class="masonry-item portfolio-item filter-other" data-menu-order="0" data-date="2015-01-12T09:05:02+00:00" data-title="Inside Pool" data-comments="0">-->
+                        <!--<div class="figure  element-top-0 element-bottom-0 portfolio-os-animation image-filter-none image-filter-onhover fade-in text-center figcaption-middle normalwidth" data-os-animation="fadeIn" data-os-animation-delay="0s">-->
+                            <!--<a href="{% static 'images/gallery/hotel-8-notinclude.jpg' %}" title="" class="figure-image magnific image-all" data-links=""  target="_self">-->
+                                <!--<img width="800" height="600" src="{% static 'images/gallery/hotel-8-notinclude-800x600.jpg' %}" class="normalwidth" alt="Inside Pool" />-->
+                                <!--<div class="figure-overlay grid-overlay-0">-->
+                                    <!--<div class="figure-overlay-container">-->
+                                        <!--<div class="figure-caption">-->
+                                            <!--<i class="icon-circle-plus"></i>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+	{% placeholder "content" %}
+{% endblock content %}
